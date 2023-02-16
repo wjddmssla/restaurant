@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 로그인</title>
+    <title>예약 관리 페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="/static/css/admin/admin_common.css">
-    <link rel="stylesheet" href="/static/css/admin/admin_login.css">
     <link rel="stylesheet" href="/static/css/admin/left_aside.css">
+    <link rel="stylesheet" href="/static/css/admin/reservation.css">
+    <link rel="stylesheet" href="/static/css/admin/reset.css">
 </head>
 <body>
 <div id="container">
     <header class="header-container">
-        <h1 class="admin-logo"><a href="">홈</a></h1>
-        <h1 class="store">가게이름</h1>
+        <h1 class="admin-logo"><a href=""><i class="fa-solid fa-utensils"></i></a></h1>
+        <h1 class="store">HotSix</h1>
         <ul class="menu-login">
             <li><a href="/templates/admin/admin_login.html">로그인</a></li>
         </ul>
@@ -25,7 +27,7 @@
     <main class="main-container">
         <aside class="left-aside">
             <div class="aside-title">
-                <h1 class="title-text-h1">HotSix</h1>
+                <h1 class="hotsix">HotSix</h1>
             </div>
             <nav class="main-menu">
                 <h2 class="menu-menu">☆예약관리☆</h2>
@@ -38,7 +40,135 @@
                     <a href=""><li>메뉴 등록</li></a>
                 </ul>
             </nav>
-        </aside>  
+        </aside>
+
+        <div class="content-container">
+            <h1 class="content-title">☆예약정보 조회☆</h1>
+            <div class="table-container">
+                <table class="reservation-table">
+                    <thead>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                        <tr>
+                            <th>순번</th>
+                            <th>예약날짜</th>
+                            <th>예약시간</th>
+                            <th>이름</th>
+                            <th>인원수</th>
+                            <th>소인</th>
+                            <th>대인</th>
+                            <th>연락처</th>
+                            <th>이메일</th>
+                            <th>요청사항</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="page-controller">
+                <a href="" class="disabled">이전</a>
+                <ul class="page-numbers">
+                    <a href=""><li>1</li></a>
+                    <a href=""><li>2</li></a>
+                    <a href=""><li>3</li></a>
+                    <a href=""><li>4</li></a>
+                    <a href=""><li>5</li></a>
+                </ul>
+                <a href="">다음</a>
+            </div>
     
     </main>
 </div>

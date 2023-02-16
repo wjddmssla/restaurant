@@ -11,16 +11,11 @@
 }
 
 body {
-    background-image: url(/static/images/background.jpg);
+    background-image: url(/static/images/background2.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-}
-
-#container {
-    margin: 0px auto;
-    width: 1400px;
 }
 
 button {
@@ -37,7 +32,7 @@ button:disabled {
 
 button:not(:disabled):hover {
     background-color: #fafafa;
-    color: #3e3e3e;
+    color: #c88b8b;
 }
 
 .header-container {
@@ -52,13 +47,13 @@ button:not(:disabled):hover {
 }
 
 .admin-logo a {
-    font-size: 30px;
+    font-size: 55px;
     font-weight: 1000;
-    color: white;
+    color: rgb(83, 83, 83);
 }
 
 .store {
-    font-size: 40px;
+    font-size: 55px;
     font-weight: 600;
     color: rgb(226, 128, 128);
 }
@@ -73,6 +68,7 @@ a {
 }
 
 .menu-login li a {
+    padding-right: 20px;
     font-size: 35px;
     font-weight: 600;
     color: white;
