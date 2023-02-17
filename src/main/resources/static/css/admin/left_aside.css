@@ -1,9 +1,9 @@
-.main-container {
+/* .main-container {
     padding: 0%;
-}
+} */
 
 .left-aside {
-    padding-top: 150px;
+    padding-top: 100px;
     width: 150px;
     position: fixed;
 }
@@ -14,19 +14,19 @@
     align-items: center;
 
     width: 100%;
-    height: 20%;
+    height: 30%;
 }
 
 .hotsix {
-    padding-bottom: 15px;
-    font-size: 30px;
+    padding-bottom: 20px;
+    font-size: 45px;
     color: #ba7373;
 }
 
 .main-menu {
-    border: 1px solid rgb(189, 100, 115);
+    border: 1px solid rgb(172, 113, 123);
 
-    background-color: #ffbcbc;
+    background-color: #f8d4d4;
     color: white;
 }
 
@@ -35,10 +35,12 @@
     align-items: center;
     justify-content: center;
 
+    background-color: #ffbcbc;
+
     border-top: 1px solid rgb(189, 100, 115);
     border-bottom: 1px solid rgb(189, 100, 115);
 
-    height: 90px;
+    height: 100px;
     font-size: 25px;
 }
 
@@ -49,16 +51,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     
-    width: 150px;
-    height: 35px;
-
-    font-size: 30px;
-    color: white;
-}
-
-.sub-menu2 li {
-    display: flex;
-
     width: 150px;
     height: 40px;
 

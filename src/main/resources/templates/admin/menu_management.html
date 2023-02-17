@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 로그인</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="/static/css/admin/admin_common.css">
-    <link rel="stylesheet" href="/static/css/admin/left_aside.css">
-    <link rel="stylesheet" href="/static/css/admin/reset.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>메뉴 관리 페이지</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    
+        <link rel="stylesheet" href="/static/css/admin/admin_common.css">
+        <link rel="stylesheet" href="/static/css/admin/left_aside.css">
+        <link rel="stylesheet" href="/static/css/admin/menu_magement.css">
+        <link rel="stylesheet" href="/static/css/admin/reset.css">
+    </head>
 <body>
 <div id="container">
     <header class="header-container">
@@ -23,24 +24,47 @@
         </ul>
     </header>
 
+    <aside class="left-aside">
+        <div class="aside-title">
+            <h1 class="hotsix">HotSix</h1>
+        </div>
+        <nav class="main-menu">
+            <h2 class="menu-menu">☆예약관리☆</h2>
+            <ul class="sub-menu">
+                <a href="/templates/admin/reservation_management.html"><li>예약정보 조회</li></a>
+            </ul>
+            <h2 class="menu-menu">☆MENU☆</h2>
+            <ul class="sub-menu">
+                <a href="/templates/admin/menu_management.html"><li>메뉴 관리</li></a>
+                <a href="/templates/admin/menu_registration.html"><li>메뉴 등록</li></a>
+            </ul>
+        </nav>
+    </aside>
+
     <main class="main-container">
-        <aside class="left-aside">
-            <div class="aside-title">
-                <h1 class="title-text-h1">HotSix</h1>
+        <div class="page-title">
+            <h1 class="main-title">☆메뉴 관리☆</h1>
+        </div>
+        
+        <div class="content-container">
+            <div class="content-flex">
+                <div class="info-container">
+                    <div class="menu-desc">
+                        <div class="img-container">
+                            <img src="/static/images/gogi1.jpg" class="menu-img">
+                        </div> 
+                        <div class="menu-info">
+                            <div class="menu-code">메뉴-001</div>
+                            <h3 class="menu-name">맛있는 고기 냠냠</h2>
+                            <div class="info-text menu-price"><b>&nbsp;&nbsp;&nbsp;&nbsp; 가격 &nbsp;</b></div>
+                            <div class="info-text menu-age1"><b>대인: </b>90,000</div>
+                            <div class="info-text menu-age2"><b>소인: </b>50,000</div>
+                            <div class="info-text sales-pride"><b>판매기간: </b>상시/한정</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <nav class="main-menu">
-                <h2 class="menu-menu">☆예약관리☆</h2>
-                <ul class="sub-menu">
-                    <a href=""><li>예약정보 조회</li></a>
-                </ul>
-                <h2 class="menu-menu">☆MENU☆</h2>
-                <ul class="sub-menu">
-                    <a href=""><li>메뉴 관리</li></a>
-                    <a href=""><li>메뉴 등록</li></a>
-                </ul>
-            </nav>
-        </aside>  
-    
+        </div>
     </main>
 </div>
 </body>
