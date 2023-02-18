@@ -19,7 +19,9 @@
     width: 400px;
     height: 400px;
 
-    background-color: rgb(255, 255, 255);
+    background-size: 100px;
+    background-image: url(/static/images/spring.png);
+    /* background-color: rgb(255, 255, 255); */
 
     border-radius: 2%;
 }
