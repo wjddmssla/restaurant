@@ -19,8 +19,8 @@
     width: 400px;
     height: 400px;
 
-    background-size: 100px;
-    background-image: url(/static/images/spring.png);
+    background-size: 400px 400px;
+    background-image: url(/static/images/spring.jfif);
     /* background-color: rgb(255, 255, 255); */
 
     border-radius: 2%;
@@ -45,9 +45,16 @@
 }
 
 .login-inputs {
+    border: none;
+    background-color: rgb(221, 221, 221);
+    opacity:0.8;
     height: 40px;
-    font-size: 18px;
+    font-size: 25px;
+    color: rgb(17, 17, 17);
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
 }
 
 .login-error {
