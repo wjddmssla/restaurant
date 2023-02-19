@@ -1,0 +1,58 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 200px;
+
+
+}
+
+.title {
+    background-image: url(/static/images/welcome.png);
+    background-size: 500px 500px;
+    
+    border: none;
+    box-shadow: 15px 15px 15px 10px rgb(249, 249, 249);
+    width: 500px;
+    height: 500px;
+
+}
+
+.hello {
+    background-image: linear-gradient(90deg, red, orange, yellow, green, blue, navy, purple);
+    background-size: 300px;
+    -webkit-background-clip: text;
+
+    margin-left: 25px;
+    padding-top: 80px;
+    color: transparent;
+
+    font-size: 50px;
+}
+
+.text {
+    padding-top: 150px;
+    padding-left: 25px;
+}
+
+.hotsix {
+    font-size: 40px;
+
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px red;
+}
+
+.page {
+    font-size: 40px;
+
+    text-shadow: 1px 1px 1px yellow;
+
+}
+
+.welcome {
+    font-size: 40px;
+
+    text-shadow: 1px 1px 1px rgb(0, 255, 187);
+}
+
