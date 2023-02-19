@@ -19,7 +19,11 @@
 
 .hotsix {
     padding-bottom: 20px;
+
     font-size: 45px;
+
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px red;
     color: #ba7373;
 }
 
