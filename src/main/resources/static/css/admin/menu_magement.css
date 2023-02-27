@@ -70,7 +70,7 @@
 .img-container {
     display: flex;
 
-    margin-left: 42%;
+    margin-left: 20px;
     margin-bottom: 10px;
     width: 300px;
     height: 300px;
@@ -79,7 +79,9 @@
 }
 
 .menu-img {
-    height: 100%;
+    margin-top: 15px;
+    width: 330px;
+    height: 90%;
 }
 
 .menu-info {
@@ -87,7 +89,7 @@
     flex-direction: column;
     flex-grow: 1;
 
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 .menu-code {
@@ -96,7 +98,6 @@
     align-items: center;
 
     padding: 3px 0px 3px 0px;
-
 
     border-radius: 4px;
     width: 80px;
@@ -114,6 +115,12 @@
     font-size: 35px;
 }
 
+.info-text3 {
+    margin-left: 140px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .info-text {
     font-size: 25px;
 }
@@ -129,4 +136,26 @@
 
 .info-text b {
     font-size: 25px;
+}
+
+.menu-icon{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 320px;
+}
+
+.menu-icon i {
+    font-size: 20px;
+
+}
+
+.delete-button {
+    background:none;
+    border: none;
+}
+
+.delete-button:hover {
+    background-color: #ffb6d1;
+    color: black;
+    cursor: pointer;
 }

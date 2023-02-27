@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 로그인</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,22 +24,19 @@
     </header>
 
     <main class="main-container">
-        <form action="" method="post">
+        <form action="/account/login" method="get">
             <div class="login-container">
                 <h1 class="main-sub">관리자 로그인</h1>
                 <div class="login-group">
-                    <label for="admin-Id" class="login-ID">ID</label>
-                    <input type="text" id="admin-Id" class="login-inputs" name="adminId" required>
+                    <label for="adminId" class="login-ID">ID</label>
+                    <input type="text" id="adminId" class="login-inputs" name="adminId" required>
                 </div>
                 <div class="login-group">
-                    <label for="admin-password" class="login-PW">PW</label>
-                    <input type="password" id="admin-password" class="login-inputs login-inputs-password" name="admminPassword" required>
-                </div>
-                <div class="login-error">
+                    <label for="adminPw" class="login-PW">PW</label>
+                    <input type="password" id="adminPw" class="login-inputs login-inputs-password" name="admminPw" required>
                 </div>
                 <div class="button-group">
-                    <button type="submit" class="login-submit">로그인</button>
-
+                    <button type="submit" class="login-submit" >로그인</button>
                 </div>
             </div>
         </form>
