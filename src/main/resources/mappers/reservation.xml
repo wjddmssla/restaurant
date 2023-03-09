@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.korit.restaurant.repository.ReservationRepository">
+    <select id="getReservationTotalCount"
+            parameterType="com.korit.restaurant.web.dto.SearchNumberListReqDto"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            dinning_mst
+        where
+            1 = 1
+        <if test='searchValue != null and searchValue != ""'>
+            and (
+            reserve_name like CONCAT('%', #{searchValue}, '%')
+            or	email like CONCAT('%', #{searchValue}, '%')
+            )
+        </if>
+    </select>
+
+    <select id="searchReservation" parameterType="com.korit.restaurant.web.dto.SearchReqDto" resultType="com.korit.restaurant.entity.admin.ReservationMst">
+        SELECT
+            reserve_id as reserveId,
+            reserve_name as reserveName,
+            reserve_date as reserveDate,
+            reserve_time as reserveTime,
+            number,
+            email,
+            adult,
+            child,
+            guest,
+            request
+        FROM
+            dinning_mst
+        where
+            1 = 1
+        <if test='searchValue != null and searchValue != ""'>
+            and (
+            reserve_name like CONCAT('%', #{searchValue}, '%')
+            or	email like CONCAT('%', #{searchValue}, '%')
+            )
+        </if>
+
+        order by
+        <choose>
+            <when test='order == "reserveName"'>reserve_name,</when>
+            <when test='order == "dateAsc"'>reserve_date,</when>
+            <when test='order == "dateDesc"'>reserve_date desc,</when>
+            <when test='order == "email"'>email,</when>
+        </choose>
+        reserve_id
+        <if test='limit == "Y"'>
+            limit #{index}, #{count}
+        </if>
+    </select>
+
+    <select id="findReserveByReserveName" resultType="com.korit.restaurant.entity.admin.ReservationMst">
+        SELECT
+            reserve_id as reserveId,
+            reserve_name as reserveName,
+            reserve_date as reserveDate,
+            reserve_time as reserveTime,
+            number,
+            email,
+            adult,
+            child,
+            guest,
+            request
+        from
+            dinning_mst
+        where
+            reserve_name = #{reserveName};
+    </select>
+
+    <insert id="saveReserve" parameterType="com.korit.restaurant.web.dto.ReservationReqDto">
+        insert into dinning_mst
+        values
+            (0, #{reserveName}, #{reserveDate}, #{reserveTime}, #{number}, #{email}, #{adult}, #{child}, #{guest}, #{request})
+    </insert>
+
+    <update id="updateReserveByReserveName" parameterType="com.korit.restaurant.web.dto.ReservationReqDto">
+        update dinning_mst
+        set
+            reserve_name = #{reserveName}
+            reserve_date = if(#{reserveDate} = '', null, #{reserveDate}),
+            reserve_time = if(#{reserveTime} = '', null, #{reserveTime}),
+            number = #{number},
+            email = #{email},
+            adult = #{adult},
+            child = #{child},
+            guest = if(#{guest} = '', null, #{guest}),
+            request = if(#{request} = '', null, #{request})
+        where
+            reserve_name = #{reserveName}
+    </update>
+
+    <update id="maintainUpdateReserveByReserveName" parameterType="com.korit.restaurant.web.dto.ReservationReqDto">
+        update dinning_mst
+        set
+            reserve_name = #{reserveName}
+            <if test='reserveDate != null and reserveDate != ""'>reserve_date = #{reserveDate},</if>
+            <if test='reserveTime != null and reserveTime != ""'>reserve_time = #{reserveTime},</if>
+            number = #{number}
+            email = #{email}
+            adult = #{adult}
+            child = #{child}
+            <if test=''>guest = #{guest},</if>
+            <if test='request != null and request != ""'>request = #{request},</if>
+        where
+            reserve_name = #{reserveName}
+    </update>
+
+</mapper>

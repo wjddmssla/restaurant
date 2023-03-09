@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+  mvc:
+    static-path-pattern: /static/**
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.ctnjv8rfym3f.ap-northeast-2.rds.amazonaws.com/restaurant
+    username: admin
+    password: dkssud1234
+
+mybatis:
+  mapper-locations:
+    - /mappers/*.xml
+
+file:
+  path: C:/63building/63restaurant/upload/

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.korit.restaurant.repository.SearchMenuRepository">
+
+    <select id="getAdminSearchMenuTotalCount"
+            parameterType="com.korit.restaurant.web.dto.SearchMenuReqDto"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            admin_menu
+        where
+        1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            and (menu_name like concat('%', #{searchValue} ,'%') )
+        </if>
+    </select>
+
+    <select id="adminSearchMenu"
+            parameterType="com.korit.restaurant.web.dto.SearchMenuReqDto"
+            resultType="com.korit.restaurant.entity.admin.SearchMenuMst">
+        select
+        am.menu_id as menuId,
+        am.menu_code as menuCode,
+        am.menu_name as menuName,
+        am.day,
+        am.meals,
+        am.menu_age1 as menuAge1,
+        am.menu_age2 as menuAge2,
+        am.sales_pride as salesPride,
+        am.explanation
+        bi.save_name as saveName
+
+        from
+            admin_menu am
+            left outer join book_image bi
+            on(am.menu_code = am.menu_code)
+        where
+            1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            and (am.menu_name like concat('%', #{searchValue} ,'%') )
+        </if>
+
+        limit #{index}, #{count};
+    </select>
+
+</mapper>

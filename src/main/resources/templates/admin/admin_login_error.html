@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 로그인</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="/static/css/admin/admin_common.css">
+    <link rel="stylesheet" href="/static/css/admin/admin_login.css">
+</head>
+<body>
+<div id="container">
+    <header class="header-container">
+        <h1 class="admin-logo"><a href="/templates/admin/admin_home.html"><i class="fa-solid fa-utensils"></i></a></h1>
+        <h1 class="store">HotSix</h1>
+        <ul class="menu-login">
+            <li><a href="/templates/admin/admin_login.html">로그인</a></li>
+        </ul>
+    </header>
+
+    <main class="main-container">
+        <form action="/account/login/error" method="post">
+            <div class="login-container">
+                <h1 class="main-sub">관리자 로그인</h1>
+                <div class="login-group">
+                    <label for="adminId" class="login-ID">ID</label>
+                    <input type="text" id="adminId" class="login-inputs" name="adminId" required>
+                </div>
+                <div class="login-group">
+                    <label for="adminPw" class="login-PW">PW</label>
+                    <input type="password" id="adminPw" class="login-inputs login-inputs-password" name="admminPw" required>
+                </div>
+                <div class="login-error">
+                    사용자 정보를 다시 확인하세요.
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="login-submit" >로그인</button>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>

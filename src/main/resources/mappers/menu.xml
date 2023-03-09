@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.korit.restaurant.repository.MenuRepository">
+
+    <select id="getMenuTotalCount"
+            parameterType="com.korit.restaurant.web.dto.SearchNumberListReqDto"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            admin_menu
+        where
+            1 = 1
+        <if test='searchValue != null and searchValue != ""'>
+            and (
+            menu_name like CONCAT('%', #{searchValue}, '%')
+            )
+        </if>
+    </select>
+
+    <select id="searchMenu" parameterType="com.korit.restaurant.web.dto.SearchReqDto" resultType="com.korit.restaurant.entity.admin.MenuMst">
+        SELECT
+            menu_id as menuId,
+            menu_code as menuCode,
+            menu_name as menuName,
+            day,
+            meals,
+            menu_age1 as menuAge1,
+            menu_age2 as menuAge2,
+            sales_pride as salesPride,
+            explanation
+        from
+            admin_menu
+        where
+            1 = 1
+        <if test='searchValue != null and searchValue != ""'>
+            and (
+            am.menu_name like CONCAT('%', #{searchValue}, '%')
+            )
+        </if>
+
+        order by
+            menuId
+        <if test='limit == "Y"'>
+            limit #{index}, #{count}
+        </if>
+    </select>
+
+    <select id="findMenuByMenuCode" resultType="com.korit.restaurant.entity.admin.MenuMst">
+        SELECT
+            menu_id as menuId,
+            menu_code as menuCode,
+            menu_name as menuName,
+            day,
+            meals,
+            menu_age1 as menuAge1,
+            menu_age2 as menuAge2,
+            sales_pride as salesPride,
+            explanation
+        from
+            admin_menu
+        where
+            menu_code = #{menuCode};
+    </select>
+
+    <insert id="saveMenu" parameterType="com.korit.restaurant.web.dto.MenuReqDto">
+        insert into admin_menu
+        values
+        (0, #{menuCode}, #{menuName}, #{day}, #{meals}, #{menuAge1}, #{menuAge2}, #{salesPride}, #{explanation})
+    </insert>
+
+    <update id="updateMenuByMenuCode" parameterType="com.korit.restaurant.web.dto.MenuReqDto">
+        update admin_menu
+        set
+            menu_name = #{menuName},
+            day = #{day},
+            menu_age1 = #{menuAge1},
+            menu_age2 = #{menuAge2},
+            sales_pride = #{salesPride},
+            explanation = if(#{explanation} = '', null, #{explanation})
+        where
+            menu_code = #{menuCode}
+    </update>
+
+    <update id="maintainUpdateMenuByMenuCode" parameterType="com.korit.restaurant.web.dto.MenuReqDto">
+        update admin_menu
+        set
+        menu_name = #{menuName},
+        day = #{day},
+        menu_age1 = #{menuAge1},
+        menu_age2 = #{menuAge2},
+        sales_pride = #{salesPride},
+        <if test='explanation != null'>explanation = #{explanation},</if>
+        where
+            menu_code = #{menuCode}
+    </update>
+
+    <delete id="deleteMenu">
+        delete
+        from
+            admin_menu
+        where
+            menu_code = #{menuCode}
+    </delete>
+
+    <insert id="registerMenuImages" parameterType="list">
+        insert into menu_image
+        values
+        <foreach collection="list" item="file" separator=",">
+            (0, #{file.menuCode}, #{file.saveName}, #{file.originName})
+        </foreach>
+    </insert>
+
+    <select id="findMenuImageAll" resultType="com.korit.restaurant.entity.admin.MenuImage">
+        select
+            image_id as imageId,
+            menu_code as menuCode,
+            save_name as saveName,
+            origin_name as originName
+        from
+            menu_image
+        where
+            menu_code = #{menuCode}
+
+    </select>
+
+    <select id="findMenuImageByImageId" resultType="com.korit.restaurant.entity.admin.MenuImage">
+        select
+            image_id as imageId,
+            menu_code as menuCode,
+            save_name as saveName,
+            origin_name as originName
+        from
+            menu_image
+        where
+            image_id = #{imageId}
+
+    </select>
+
+    <select id="findMenuImageByMenuCode" resultType="com.korit.restaurant.entity.admin.MenuImage">
+        select
+        image_id as imageId,
+        menu_code as menuCode,
+        save_name as saveName,
+        origin_name as originName
+        from
+            menu_image
+        where
+            menu_code = #{menuCode}
+
+    </select>
+
+    <delete id="deleteMenuImage">
+        delete
+        from
+            menu_image
+        where
+            image_id = #{imageId};
+    </delete>
+
+</mapper>

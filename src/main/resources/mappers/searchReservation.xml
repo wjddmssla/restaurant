@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.korit.restaurant.repository.SearchReservationRepository">
+
+    <select id="getAdminSearchReservationTotalCount"
+            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
+            resultType="Integer">
+        select
+            count(*)
+        from
+            book_mst
+        where
+            1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            reserve_name like CONCAT('%', #{searchValue}, '%')
+            or	email like CONCAT('%', #{searchValue}, '%')
+        </if>
+
+    </select>
+
+    <select id="adminSearchReservation"
+            parameterType="com.korit.restaurant.web.dto.SearchReservationReqDto"
+            resultType="com.korit.restaurant.entity.admin.SearchReservationMst">
+        select
+            reserve_id as reserveId,
+            reserve_name as reserveName,
+            reserve_date as reserveDate,
+            reserve_time as reserveTime,
+            number,
+            email,
+            adult,
+            child,
+            guest,
+            request
+        FROM
+            dinning_mst
+        where
+            1 = 1
+        <if test="searchValue != null and searchValue != ''">
+            reserve_name like CONCAT('%', #{searchValue}, '%')
+            or	email like CONCAT('%', #{searchValue}, '%')
+        </if>
+
+        limit #{index}, #{count};
+    </select>
+
+</mapper>
